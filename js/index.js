@@ -1,10 +1,18 @@
-const $flexCheck1 = document.getElementById('#flexCheck1');
-const $flexCheck2 = document.getElementById('#flexCheck2');
-const $flexCheck3 = document.getElementById('#flexCheck3');
-const $flexCheck4 = document.getElementById('#flexCheck4');
-const $btnGenerate = document.getElementById('#btnGenerate');
-const $passwordGenerated = document.getElementById('#passwordGenerated');
-const $inputLength = document.getElementById('#inputLength');
+
+let $flexCheck1, $flexCheck2, $flexCheck3, $flexCheck4, $btnGenerate,
+$passwordGenerated, $inputLength, $copyText;
+
+const initVars = () => {
+    $flexCheck1 = document.getElementById("flexCheck1");
+    $flexCheck2 = document.getElementById("flexCheck2");
+    $flexCheck3 = document.getElementById("flexCheck3");
+    $flexCheck4 = document.getElementById("flexCheck4");
+    $btnGenerate = document.getElementById("btnGenerate");
+    $passwordGenerated = document.getElementById("passwordGenerated");
+    $inputLength = document.getElementById("inputLength");
+    $passwordLabel = document.getElementById("passwordLabel");
+    $copyText = document.querySelector('.passResult');
+  };
 
 
 const generatePassword = (base, length) => {
@@ -30,11 +38,29 @@ const generate = () => {
     if ($flexCheck3.checked) base+=numbers;
     if ($flexCheck4.checked) base+=symbols;
 
-    $passwordGenerated.innerText = generatePassword(base, length);
+    $passwordGenerated.value = generatePassword(base, length);
 };
 
-window.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
+	initVars();
+
     $btnGenerate.addEventListener("click", () => {
         generate();
     });
-});
+    $inputLength.addEventListener("change", (e) => {
+        $passwordLabel.innerText = `Longitud de Caracter (${e.target.value})`;
+      });
+    $copyText.querySelector('img').addEventListener('click',function(){
+        let input = $copyText.querySelector('input.form-control');
+        input.select();
+        document.execCommand('copy');
+        $copyText.classList.add('active');
+        window.getSelection().removeAllRanges();
+        setTimeout(function() {
+            $copyText.classList.remove('active');
+        },2500);
+        })
+    });  
+
+
+    

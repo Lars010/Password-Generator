@@ -19,33 +19,35 @@
     <div class="row justify-content-md-center">
       <div class="col-md-5">
       <h1>Generador de contraseñas</h1>
+      <div class="passResult">
+        <input type="text" class="form-control" id="passwordGenerated">
+        <img src="./images/copy.svg" alt="Copy" title="Copy" id="copyPass" class="copyPassword">
+      </div>
 
-      <input type="text" class="form-control" id="passwordGenerated">
-
-      <label for="customRange2" class="form-label">Longitud de Caracter</label>
-      <input type="range" class="form-range" min="0" max="20" value="0" id="inputLength">
+      <label for="inputLength" id="passwordLabel" class="form-label">Longitud de Caracter</label>
+      <input step="1" type="range" class="form-range" min="0" max="20" value="0" id="inputLength">
 
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheck1">
-        <label class="form-check-label" for="flexCheckDefault">
+        <label class="form-check-label" for="flexCheck1">
           incluye letras Mayusculas.
         </label>
       </div>
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheck2">
-        <label class="form-check-label" for="flexCheckChecked">
+        <label class="form-check-label" for="flexCheck2">
           Incluye letras Minusculas.
         </label>
       </div>
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheck3">
-        <label class="form-check-label" for="flexCheckDefault">
+        <label class="form-check-label" for="flexCheck3">
           Incluye Numeros.
         </label>
       </div>
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheck4">
-        <label class="form-check-label" for="flexCheckChecked">
+        <label class="form-check-label" for="flexCheck4">
           Incluye Simbolos.
         </label>
       </div>
