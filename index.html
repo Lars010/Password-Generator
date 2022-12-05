@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/index.css">
+  <title>Generador de contraseñas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-5">
+      <h1>Generador de contraseñas</h1>
+
+      <input type="text" class="form-control" id="passwordGenerated">
+
+      <label for="customRange2" class="form-label">Longitud de Caracter</label>
+      <input type="range" class="form-range" min="0" max="20" value="0" id="inputLength">
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheck1">
+        <label class="form-check-label" for="flexCheckDefault">
+          incluye letras Mayusculas.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheck2">
+        <label class="form-check-label" for="flexCheckChecked">
+          Incluye letras Minusculas.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheck3">
+        <label class="form-check-label" for="flexCheckDefault">
+          Incluye Numeros.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheck4">
+        <label class="form-check-label" for="flexCheckChecked">
+          Incluye Simbolos.
+        </label>
+      </div>
+      <div class="seguridad">
+        <p>Nivel de Seguridad</p>
+        <img src="./images/level.svg" alt="nivel" title="Nivel de Seguridad">
+      </div>
+
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary" id="btnGenerate" type="button">Generate Password</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
